@@ -1,6 +1,7 @@
-
+find_package(GTest REQUIRED)
 add_xacc_test(TNQVM)
-target_link_libraries(TNQVMTester xacc::xacc)
+include_directories(${GTEST_INCLUDE_DIRS})
+target_link_libraries(TNQVMTester xacc::xacc GTest::GTest GTest::Main)
 
 if (EXATN_DIR)
     add_xacc_test(ExatnVisitor)

@@ -61,10 +61,19 @@ else()
   message(STATUS "Build Type: ${CMAKE_BUILD_TYPE}.")
 endif()
 
+#--------------------------------------------------------------------------------------#
+# find gtest
+#find_package(GTest REQUIRED)
+#include_directories(${GTEST_INCLUDE_DIRS})
+#--------------------------------------------------------------------------------------#
+
+
+#--------------------------------------------------------------------------------------#
 if (NOT XACC_DIR)
   set(XACC_DIR "$ENV{HOME}/.xacc")
 endif()
 
+#--------------------------------------------------------------------------------------#
 # Add DEBUG preprocessor def for debug-only code
 IF(CMAKE_BUILD_TYPE MATCHES "Debug")
   add_compile_definitions(_DEBUG)
